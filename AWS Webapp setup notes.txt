@@ -1,0 +1,49 @@
+ssh -i c:/linuxVMs/UdacityFullStackWebDev/AWS_UdFullStack/Key_UdFullStack01.pem 
+
+
+
+
+WebDev01 {
+Instance id: i-468cdecf
+Private IP: 10.0.0.148
+Public IP: 54.210.46.196
+PUblic DNS: ec2-54-210-46-196.compute-1.amazonaws.com
+ssh -i "c:/linuxVMs/UdacityFullStackWebDev/AWS_UdFullStack/Key_UdFullStack01.pem" ec2-user@ec2-54-210-46-196.compute-1.amazonaws.com
+}
+PosgreSQL01{
+Instance id: i-08347b1a2d9480f61
+Public IP: 52.4.112.136
+Private IP: 10.0.0.199
+PUblic DNS: ec2-user@ec2-52-4-112-136.compute-1.amazonaws.com
+ssh -i "c:/linuxVMs/UdacityFullStackWebDev/AWS_UdFullStack/Key_UdFullStack01.pem" ec2-user@ec2-52-4-112-136.compute-1.amazonaws.com
+}
+
+HowTo: Setup a webserver on aws
+
+Create 2 Instances
+	Create Webserver instance
+		Download pem file.
+		Open routes to ssh at your ip, http to all, https to all
+	Create PosgreSQL instance
+		Download pem file.
+		Open routes to ssh at your ip, postgresql at your ip
+
+SSH into instances
+	ssh -i "c:/linuxVMs/UdacityFullStackWebDev/AWS_UdFullStack/Key_UdFullStack01.pem" ec2-user@ec2-54-210-46-196.compute-1.amazonaws.com
+Install relevent packages
+	Create Webserver instance
+		(Amazon Linux includes Python by default)
+	Create PosgreSQL instance
+		Instal PostgresQL
+			Ref: http://imperialwicket.com/aws-install-postgresql-on-amazon-linux-quick-and-dirty/
+		Turn on postgresql service
+			start service postgresql
+		Install SQLAlchemy (Object Relational Mapping between Python and SQL)
+			$ virtualenv sqlalchemy-workspace
+			$ cd sqlalchemy-workspace
+			$ source bin/activate
+			$ pip install sqlalchemy
+			Ref: http://pythoncentral.io/how-to-install-sqlalchemy/
+
+
+

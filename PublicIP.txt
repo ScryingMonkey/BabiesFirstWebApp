@@ -1,0 +1,8 @@
+WebDev01 : 54.210.46.196
+
+ssh -i linuxVMs/UdacityFullStackWebDev/AWS_UdFullStack/Key_UdFullStack01.pem 
+
+
+
+PUblic DNS: ec2-54-210-46-196.compute-1.amazonaws.com
+
